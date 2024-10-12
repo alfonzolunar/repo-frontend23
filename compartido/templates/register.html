@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/styleForm.css">
+    <script src="/static/js/appRegister.js"></script>
+    <title>Form</title>
+</head>
+<body>
+    <h1> Formulario </h1>
+    <form>
+        <label> Nombre </label> <input type="text" id="name"> <br> <br>
+        <label> Apellido </label> <input type="text" id="lastname"> <br> <br>
+        <label> Cédula </label> <input type="number" id="id"> <br> <br>
+        <label> Fecha </label> <input type="date" id="date"> <br> <br>
+        <label> Teléfono </label> <input type="number" id="phone"> <br> <br>
+        <label> Email </label> <input type="email" id="email"> <br> <br>
+        <label> Contraseña </label> <input type="password" id="passw"> <br> <br>
+        <select>
+            <option> Estudia </option>
+            <option> Trabaja </option>
+        </select> <br> <br>
+        <input type="checkbox" > Acepto las condiciones
+        <input type="checkbox"> No acepto las condiciones <br> <br>
+        <button onclick="register_user()"> Registrar </button> <br> <br>
+        <a href="home.html">Volver</a> 
+    </form>
+</body>
+</html>
