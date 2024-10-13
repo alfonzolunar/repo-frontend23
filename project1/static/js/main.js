@@ -71,7 +71,7 @@ function mostrarUsuarios() {
         });
     } else {
         return
-        //listaUsuarios.innerHTML = '<p>No hay usuarios registrados.</p>';
+        //listaUsuarios.innerHTML = '<p>No hay usuarios registrados.</p>'; //Este mensaje se puede dejar inicalmente si no hay usuarios registrados
     }
 }
 
@@ -94,7 +94,7 @@ function mostrarCitas() {
         });
     } else {
         return
-        //listaCitas.innerHTML = '<p>No hay citas programadas.</p>';
+        //listaCitas.innerHTML = '<p>No hay citas programadas.</p>'; //Este mensaje se puede dejar inicalmente si no hay citas programadas
     }
 }
 
