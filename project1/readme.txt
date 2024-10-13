@@ -11,6 +11,8 @@ Registrar Cita Médica: Permite agendar una cita médica para una mascota ya reg
 Ver Usuarios: Muestra una lista de todos los usuarios y sus respectivas mascotas registradas.
 Ver Citas Médicas: Muestra una lista de todas las citas médicas programadas para las mascotas.
 
+Se añade un boton oculto con click derecho para borrar la memoria localStorage para fines de pruebas
+
 2. Registrar Usuario (registrarUsuario.html)
 En esta página, el usuario puede registrar los datos de una persona junto con los de su mascota. El formulario incluye los siguientes campos:
 
@@ -46,7 +48,7 @@ Nombre del dueño de la mascota.
 Nombre de la mascota.
 Fecha de la cita.
 Hora de la cita.
-Si no hay citas programadas puede mostrar un mensaje de no hay citas programadas, pero de dejan datos de muestra que luego se sumarian los almacenados localmente
+Si no hay citas programadas mostrara un mensaje de no hay citas programadas, pero de dejan datos de muestra que se sumarian los almacenados localmente
 
 Tecnología Utilizada
 La aplicación está construida utilizando las siguientes tecnologías:

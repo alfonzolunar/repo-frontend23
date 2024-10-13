@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Inicio</title>
     <link rel="stylesheet" href="../static/css/estilosInicio.css">
+    <script src="../static/js/main.js"></script>
 </head>
 <body>
     <header>
-        <h1>Bienvenido a la App de Citas Médicas para Mascotas</h1>
+        <h1>Bienvenido a la Aplicación de Citas Médicas para Mascotas</h1>
         <nav>
             <ul>
                 <li><a href="registrarUsuario.html">Registrar Usuario</a></li>
@@ -24,5 +25,8 @@
         <p>Utiliza las opciones del menú para registrar usuarios, programar citas o consultar información.</p>
         </div>
     </main>
+
+    <!-- Botón oculto para limpiar el localStorage -->
+    <button id="botonLimpiar" onclick="limpiarMemoria()">Limpiar Memoria</button>
 </body>
 </html>

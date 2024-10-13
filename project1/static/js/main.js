@@ -93,8 +93,7 @@ function mostrarCitas() {
             listaCitas.appendChild(citaDiv);
         });
     } else {
-        return
-        //listaCitas.innerHTML = '<p>No hay citas programadas.</p>'; //Este mensaje se puede dejar inicalmente si no hay citas programadas
+        listaCitas.innerHTML = '<p>No hay citas programadas.</p>'; //Este mensaje se puede dejar inicalmente si no hay citas programadas
     }
 }
 
@@ -113,3 +112,25 @@ document.addEventListener('DOMContentLoaded', function () {
         mostrarCitas();
     }
 });
+
+// Función para mostrar boton oculto para restear la localStore
+
+// Mostrar el botón al hacer clic derecho en la página
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault(); // Evitar el menú contextual predeterminado
+    const botonLimpiar = document.getElementById('botonLimpiar');
+    botonLimpiar.style.display = 'block'; // Mostrar el botón
+    });
+
+// Función para limpiar el localStorage
+    function limpiarMemoria() {
+    if (confirm('¿Estás seguro de que quieres limpiar la memoria? Esto eliminará todos los datos guardados.')) {
+    localStorage.clear(); // Limpiar el almacenamiento local
+    alert('Memoria limpiada correctamente.');
+    }
+    }
+
+// Ocultar el botón si se hace clic en cualquier otra parte
+    document.addEventListener('click', function() {
+    document.getElementById('botonLimpiar').style.display = 'none';
+    });

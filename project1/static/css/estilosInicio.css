@@ -32,12 +32,12 @@ nav ul li a:hover {
 }
 
 main {
-
-    background-image: url(../images/back.jpg);
+    background-image: url(../images/backt.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-color: black;
     height: 84.2vh;
+    position: relative;
 }
 
 div {
@@ -51,4 +51,17 @@ h1, h2 {
 
 p {
     font-size: 18px;
+}
+
+#botonLimpiar {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 120px;
+    padding: 10px 20px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
