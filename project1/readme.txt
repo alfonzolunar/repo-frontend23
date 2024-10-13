@@ -37,7 +37,7 @@ Nombre del dueño.
 Nombre de la mascota.
 Tipo de mascota.
 Edad de la mascota.
-Si no hay usuarios registrados, se muestra un mensaje indicándolo.
+Si no hay usuarios registrados puede mostrar un mensaje de no hay usuarios registrados, pero de dejan datos de muestra que luego se sumarian los almacenados localmente.
 
 5. Ver Citas Médicas Programadas (verCitas.html)
 Similar a la página de usuarios, esta página carga todas las citas médicas guardadas en localStorage utilizando la función mostrarCitas(). Por cada cita médica, se muestra:
@@ -46,7 +46,7 @@ Nombre del dueño de la mascota.
 Nombre de la mascota.
 Fecha de la cita.
 Hora de la cita.
-Si no hay citas programadas, el sistema lo indicará con un mensaje.
+Si no hay citas programadas puede mostrar un mensaje de no hay citas programadas, pero de dejan datos de muestra que luego se sumarian los almacenados localmente
 
 Tecnología Utilizada
 La aplicación está construida utilizando las siguientes tecnologías:

@@ -70,7 +70,8 @@ function mostrarUsuarios() {
             listaUsuarios.appendChild(usuarioDiv);
         });
     } else {
-        listaUsuarios.innerHTML = '<p>No hay usuarios registrados.</p>';
+        return
+        //listaUsuarios.innerHTML = '<p>No hay usuarios registrados.</p>';
     }
 }
 
@@ -92,7 +93,8 @@ function mostrarCitas() {
             listaCitas.appendChild(citaDiv);
         });
     } else {
-        listaCitas.innerHTML = '<p>No hay citas programadas.</p>';
+        return
+        //listaCitas.innerHTML = '<p>No hay citas programadas.</p>';
     }
 }
 
