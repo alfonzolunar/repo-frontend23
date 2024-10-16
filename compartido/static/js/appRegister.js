@@ -1,14 +1,14 @@
 
 function register_user(){
-    let nombre = document.getElementById("name").value
+        let nombre = document.getElementById("name").value
     let apellido = document.getElementById("lastname").value
     let cedula = document.getElementById("id").value
     let telefono = document.getElementById("phone").value
     let fecha = document.getElementById("date").value
     let email = document.getElementById("email").value
     let contrasena = document.getElementById("passw").value
-    let check_accept = document.getElementById("check-accept").checked
-
+    let check_accept = document.getElementById("check-accepted").checked
+   
     let confirm_vacio = validar_vacio(nombre, apellido, cedula, telefono, fecha, email, contrasena, check_accept)
     if (confirm_vacio == true) {
         alert("Usuario creado")
