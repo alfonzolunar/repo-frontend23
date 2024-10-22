@@ -1,0 +1,26 @@
+ /* Este es un comentario */
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    font-size: 25px;
+    text-align: justify;
+}
+
+ol {
+    font-size: 25px;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+.img-tigre {
+    height: 200px;
+}
+
+.img-anime {
+    height: 300px;
+}

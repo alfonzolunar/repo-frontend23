@@ -1,0 +1,50 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+main {
+    padding: 20px;
+}
+
+#listaCitas {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#listaCitas h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#listaCitas div.cita {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+#listaCitas div.cita:last-child {
+    border-bottom: none;
+}
+
+.nombreDueño, .nombreMascota, .fechaCita, .horaCita {
+    font-size: 18px;
+    margin: 5px 0;
+}
