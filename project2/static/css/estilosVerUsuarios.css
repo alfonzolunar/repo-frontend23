@@ -48,3 +48,24 @@ main {
     font-size: 18px;
     margin: 5px 0;
 }
+
+/* Estilos para Computadoras */
+@media (min-width: 1025px) {
+    table {
+        width: 80%;
+    }
+}
+
+/* Estilos para Tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+    table {
+        width: 90%;
+    }
+}
+
+/* Estilos para Celulares */
+@media (max-width: 767px) {
+    table {
+        width: 95%;
+    }
+}

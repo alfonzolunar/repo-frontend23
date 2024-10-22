@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar Usuario</title>
+    <title>Registrar Usuario y Mascota</title>
     <link rel="stylesheet" href="../static/css/estilosRegistrarUsuario.css">
-    <script src="../static/js/main.js"></script>
+    <script src="../static/js/main.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Registro de Usuario y Mascota</h1>
+        <h1>Registrar Usuario y Mascota</h1>
         <a href="inicio.html">Volver al Inicio</a>
     </header>
+
     <main>
-        <form id="formRegistrarUsuario" onsubmit="event.preventDefault(); registrarUsuario();">
-            <label for="nombrePersona">Nombre del Dueño:</label>
-            <input type="text" id="nombrePersona" name="nombrePersona" required>
+        <form onsubmit="return validarFormularioUsuario()">
+            <label for="nombrePersona">Nombre de la Persona:</label>
+            <input type="text" id="nombrePersona" name="nombrePersona">
 
             <label for="nombreMascota">Nombre de la Mascota:</label>
-            <input type="text" id="nombreMascota" name="nombreMascota" required>
+            <input type="text" id="nombreMascota" name="nombreMascota">
 
             <label for="tipoMascota">Tipo de Mascota:</label>
-            <input type="text" id="tipoMascota" name="tipoMascota" required>
+            <input type="text" id="tipoMascota" name="tipoMascota">
 
             <label for="edadMascota">Edad de la Mascota:</label>
-            <input type="number" id="edadMascota" name="edadMascota" required>
+            <input type="number" id="edadMascota" name="edadMascota">
 
             <button type="submit">Registrar</button>
+            <p id="mensajeError" class="mensajeError"></p>
         </form>
     </main>
 </body>

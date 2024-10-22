@@ -1,136 +1,82 @@
-// Función para registrar un usuario con su mascota
-function registrarUsuario() {
-    const nombrePersona = document.getElementById('nombrePersona').value;
-    const nombreMascota = document.getElementById('nombreMascota').value;
-    const tipoMascota = document.getElementById('tipoMascota').value;
-    const edadMascota = document.getElementById('edadMascota').value;
+// Función para validar el formulario de registro de usuario y mascota
+function validarFormularioUsuario() {
+    var nombrePersona = document.getElementById("nombrePersona").value;
+    var nombreMascota = document.getElementById("nombreMascota").value;
+    var tipoMascota = document.getElementById("tipoMascota").value;
+    var edadMascota = document.getElementById("edadMascota").value;
+    var mensajeError = document.getElementById("mensajeError");
 
-    if (nombrePersona && nombreMascota && tipoMascota && edadMascota) {
-        const usuario = {
-            nombrePersona: nombrePersona,
-            nombreMascota: nombreMascota,
-            tipoMascota: tipoMascota,
-            edadMascota: edadMascota
-        };
-
-        // Guardar los datos en el almacenamiento local (localStorage)
-        let usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-        usuarios.push(usuario);
-        localStorage.setItem('usuarios', JSON.stringify(usuarios));
-
-        alert('Usuario y mascota registrados exitosamente.');
-        limpiarFormulario();
-    } else {
-        alert('Por favor, completa todos los campos.');
+    // Verificar si los campos están vacíos
+    if (nombrePersona === "" || nombreMascota === "" || tipoMascota === "" || edadMascota === "") {
+        mensajeError.textContent = "Todos los campos son obligatorios.";
+        return false;
     }
+
+    // Validar que el nombre de la persona no contenga números
+    var regexSoloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    if (!regexSoloLetras.test(nombrePersona)) {
+        mensajeError.textContent = "El nombre de la persona no debe contener números.";
+        return false;
+    }
+
+    // Validar que el tipo de mascota no contenga números
+    if (!regexSoloLetras.test(tipoMascota)) {
+        mensajeError.textContent = "El tipo de mascota no debe contener números.";
+        return false;
+    }
+
+    // Validar que la edad de la mascota no contenga letras
+    var regexSoloNumeros = /^[0-9]+$/;
+    if (!regexSoloNumeros.test(edadMascota)) {
+        mensajeError.textContent = "La edad de la mascota debe ser un número.";
+        return false;
+    }
+
+    // Si todo es correcto
+    mensajeError.textContent = "";
+    alert("Formulario de usuario enviado correctamente.");
+    return true;
 }
 
-// Función para registrar una cita médica para una mascota
-function registrarCita() {
-    const nombreDueño = document.getElementById('nombreDueño').value;
-    const nombreMascota = document.getElementById('nombreMascota').value;
-    const fechaCita = document.getElementById('fechaCita').value;
-    const horaCita = document.getElementById('horaCita').value;
+// Función para validar el formulario de registro de cita médica
+function validarFormularioCita() {
+    var nombrePersona = document.getElementById("nombrePersona").value;
+    var nombreMascota = document.getElementById("nombreMascota").value;
+    var fechaCita = document.getElementById("fechaCita").value;
+    var horaCita = document.getElementById("horaCita").value;
+    var mensajeErrorCita = document.getElementById("mensajeErrorCita");
 
-    if (nombreDueño && nombreMascota && fechaCita && horaCita) {
-        const cita = {
-            nombreDueño: nombreDueño,
-            nombreMascota: nombreMascota,
-            fechaCita: fechaCita,
-            horaCita: horaCita
-        };
-
-        // Guardar los datos de la cita en el almacenamiento local (localStorage)
-        let citas = JSON.parse(localStorage.getItem('citas')) || [];
-        citas.push(cita);
-        localStorage.setItem('citas', JSON.stringify(citas));
-
-        alert('Cita médica registrada exitosamente.');
-        limpiarFormulario();
-    } else {
-        alert('Por favor, completa todos los campos.');
+    // Verificar si los campos están vacíos
+    if (nombrePersona === "" || nombreMascota === "" || fechaCita === "" || horaCita === "") {
+        mensajeErrorCita.textContent = "Todos los campos son obligatorios.";
+        return false;
     }
+
+    // Validar que el nombre de la persona no contenga números
+    var regexSoloLetras = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+    if (!regexSoloLetras.test(nombrePersona)) {
+        mensajeErrorCita.textContent = "El nombre de la persona no debe contener números.";
+        return false;
+    }
+
+    // Si todo es correcto
+    mensajeErrorCita.textContent = "";
+    alert("Cita registrada correctamente.");
+    return true;
 }
-
-// Función para mostrar los usuarios registrados
-function mostrarUsuarios() {
-    const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
-    const listaUsuarios = document.getElementById('listaUsuarios');
-
-    if (usuarios.length > 0) {
-        usuarios.forEach(usuario => {
-            const usuarioDiv = document.createElement('div');
-            usuarioDiv.classList.add('usuario');
-            usuarioDiv.innerHTML = `
-                <p class="nombreUsuario">Nombre del Dueño: ${usuario.nombrePersona}</p>
-                <p class="mascotaUsuario">Nombre de la Mascota: ${usuario.nombreMascota}</p>
-                <p class="tipoMascota">Tipo de Mascota: ${usuario.tipoMascota}</p>
-                <p class="edadMascota">Edad de la Mascota: ${usuario.edadMascota}</p>
-            `;
-            listaUsuarios.appendChild(usuarioDiv);
-        });
-    } else {
-        return
-        //listaUsuarios.innerHTML = '<p>No hay usuarios registrados.</p>'; //Este mensaje se puede dejar inicalmente si no hay usuarios registrados
-    }
-}
-
-// Función para mostrar las citas médicas programadas
-function mostrarCitas() {
-    const citas = JSON.parse(localStorage.getItem('citas')) || [];
-    const listaCitas = document.getElementById('listaCitas');
-
-    if (citas.length > 0) {
-        citas.forEach(cita => {
-            const citaDiv = document.createElement('div');
-            citaDiv.classList.add('cita');
-            citaDiv.innerHTML = `
-                <p class="nombreDueño">Dueño: ${cita.nombreDueño}</p>
-                <p class="nombreMascota">Mascota: ${cita.nombreMascota}</p>
-                <p class="fechaCita">Fecha: ${cita.fechaCita}</p>
-                <p class="horaCita">Hora: ${cita.horaCita}</p>
-            `;
-            listaCitas.appendChild(citaDiv);
-        });
-    } else {
-        listaCitas.innerHTML = '<p>No hay citas programadas.</p>'; //Este mensaje se puede dejar inicalmente si no hay citas programadas
-    }
-}
-
-// Función para limpiar los campos del formulario después de registrar un usuario o cita
-function limpiarFormulario() {
-    document.querySelectorAll('input').forEach(input => input.value = '');
-}
-
-// Llamadas a las funciones de mostrar datos cuando la página está lista
-document.addEventListener('DOMContentLoaded', function () {
-    if (document.getElementById('listaUsuarios')) {
-        mostrarUsuarios();
-    }
-
-    if (document.getElementById('listaCitas')) {
-        mostrarCitas();
-    }
-});
-
-// Función para mostrar boton oculto para restear la localStore
-
-// Mostrar el botón al hacer clic derecho en la página
-document.addEventListener('contextmenu', function(event) {
-    event.preventDefault(); // Evitar el menú contextual predeterminado
-    const botonLimpiar = document.getElementById('botonLimpiar');
-    botonLimpiar.style.display = 'block'; // Mostrar el botón
-    });
 
 // Función para limpiar el localStorage
-    function limpiarMemoria() {
-    if (confirm('¿Estás seguro de que quieres limpiar la memoria? Esto eliminará todos los datos guardados.')) {
-    localStorage.clear(); // Limpiar el almacenamiento local
-    alert('Memoria limpiada correctamente.');
+function limpiarLocalStorage() {
+    if (confirm("¿Estás seguro de que deseas limpiar los datos almacenados?")) {
+        localStorage.clear();
+        alert("Memoria del localStorage limpiada.");
     }
-    }
+}
 
-// Ocultar el botón si se hace clic en cualquier otra parte
-    document.addEventListener('click', function() {
-    document.getElementById('botonLimpiar').style.display = 'none';
-    });
+// Evento para mostrar el botón oculto al hacer clic derecho en el inicio
+document.addEventListener("contextmenu", function(event) {
+    event.preventDefault(); // Previene el menú contextual por defecto
+    var botonLimpiar = document.getElementById("botonLimpiar");
+    botonLimpiar.style.display = "block"; // Muestra el botón oculto
+});
+

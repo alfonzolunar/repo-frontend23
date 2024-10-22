@@ -65,3 +65,56 @@ p {
     border-radius: 5px;
     cursor: pointer;
 }
+
+/* Media Queries */
+
+/* Estilos para Computadoras */
+@media (min-width: 1025px) {
+    header {
+        font-size: 1.5em;
+    }
+
+    nav ul li {
+        margin-right: 30px;
+    }
+
+    main {
+        font-size: 1.1em;
+    }
+}
+
+/* Estilos para Tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+    header {
+        font-size: 1em;
+    }
+
+    nav ul li {
+        margin-right: 20px;
+    }
+
+    main {
+        font-size: 1em;
+    }
+}
+
+/* Estilos para Celulares */
+@media (max-width: 767px) {
+    header {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    nav ul {
+        text-align: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    main {
+        font-size: 0.9em;
+    }
+}

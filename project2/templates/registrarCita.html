@@ -5,28 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Cita Médica</title>
     <link rel="stylesheet" href="../static/css/estilosRegistrarCita.css">
-    <script src="../static/js/main.js"></script>
+    <script src="../static/js/main.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Registro de Cita Médica para Mascota</h1>
+        <h1>Registrar Cita Médica</h1>
         <a href="inicio.html">Volver al Inicio</a>
     </header>
+
     <main>
-        <form id="formRegistrarCita" onsubmit="event.preventDefault(); registrarCita();">
-            <label for="nombreDueño">Nombre del Dueño:</label>
-            <input type="text" id="nombreDueño" name="nombreDueño" required>
+        <form onsubmit="return validarFormularioCita()">
+            <label for="nombrePersona">Nombre de la Persona:</label>
+            <input type="text" id="nombrePersona" name="nombrePersona">
 
             <label for="nombreMascota">Nombre de la Mascota:</label>
-            <input type="text" id="nombreMascota" name="nombreMascota" required>
+            <input type="text" id="nombreMascota" name="nombreMascota">
 
             <label for="fechaCita">Fecha de la Cita:</label>
-            <input type="date" id="fechaCita" name="fechaCita" required>
+            <input type="date" id="fechaCita" name="fechaCita">
 
             <label for="horaCita">Hora de la Cita:</label>
-            <input type="time" id="horaCita" name="horaCita" required>
+            <input type="time" id="horaCita" name="horaCita">
 
             <button type="submit">Registrar Cita</button>
+            <p id="mensajeErrorCita" class="mensajeError"></p>
         </form>
     </main>
 </body>
