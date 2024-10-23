@@ -7,8 +7,8 @@ function App() {
     <div className="App">
         <h1>Hola buenas noches</h1>
         <p>Cordial Saludo</p>
-        <Compclass />
-        <ComFuncional />
+        <div className="comp-class"><Compclass /></div>
+        <div className="comp-func"><ComFuncional /></div>      
     </div>
   );
 }
