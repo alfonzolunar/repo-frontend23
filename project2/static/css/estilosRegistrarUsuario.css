@@ -58,13 +58,6 @@ form button:hover {
 
 /* Media Queries */
 
-/* Estilos para Computadoras */
-@media (min-width: 1025px) {
-    form {
-        width: 50%;
-    }
-}
-
 /* Estilos para Tabletas */
 @media (min-width: 768px) and (max-width: 1024px) {
     form {
@@ -74,11 +67,18 @@ form button:hover {
 
 /* Estilos para Celulares */
 @media (max-width: 767px) {
+    h1 {
+        font-size: 2em;
+    }
     form {
-        width: 95%;
+        width: 88%;
     }
 
     form input {
         width: calc(100% - 15px);
+    }
+    .contenb {
+        display: flex;
+        justify-content: center;
     }
 }

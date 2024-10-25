@@ -74,11 +74,18 @@ form button:hover {
 
 /* Estilos para Celulares */
 @media (max-width: 767px) {
+    h1{
+        font-size: 2em;
+    }
     form {
-        width: 95%;
+        width: 88%;
     }
 
     form input {
         width: calc(100% - 15px);
+    }
+    .contenb {
+        display: flex;
+        justify-content: center;
     }
 }
