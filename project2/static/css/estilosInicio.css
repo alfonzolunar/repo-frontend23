@@ -66,42 +66,41 @@ p {
     cursor: pointer;
 }
 
-/* Media Queries */
-
-/* Estilos para Computadoras */
-@media (min-width: 1025px) {
-    header {
-        font-size: 1.5em;
-    }
-
-    nav ul li {
-        margin-right: 30px;
-    }
-
-    main {
-        font-size: 1.1em;
-    }
+input {
+    display: none;
 }
+
+label {
+    display: none;
+}
+
+/* Media Queries */
 
 /* Estilos para Tabletas */
 @media (min-width: 768px) and (max-width: 1024px) {
     header {
-        font-size: 1em;
+        font-size: 1.2em;
     }
 
     nav ul li {
         margin-right: 20px;
     }
 
+    nav a {
+        font-size: 0.9em;
+    }
+
     main {
         font-size: 1em;
+        background-size: contain;
+        background-color: rgb(199, 199, 199);
     }
 }
 
 /* Estilos para Celulares */
 @media (max-width: 767px) {
     header {
-        font-size: 1.2em;
+        font-size: 0.8em;
         padding: 15px;
     }
 
@@ -112,9 +111,58 @@ p {
     nav ul li {
         display: block;
         margin-bottom: 10px;
+        font-size: 1em;
+        margin: 0;
     }
 
     main {
-        font-size: 0.9em;
+        font-size: 0.8em;
+        background-image: url(../images/mbackt.jpg);
+        background-size: cover;
+        background-color: rgb(199, 199, 199);
     }
+
+    ul{
+        display: none;
+    }
+      
+    input:checked  ~ ul{
+      display:block;
+    }
+           
+    label {
+        box-sizing: border-box;
+        display: inline-block;
+        background: #333;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        font-weight: bold;
+        text-align: center;
+        user-select: none;
+    }
+      
+     /* Estilo del boton cuando el menú está expandido*/
+    input:checked ~ label {
+        background: rgb(119, 119, 119); 
+    }
+      
+    ul{
+        margin-top:0;
+        padding: 0;
+        width: 200px;      
+    }
+      
+      
+    li {
+        display: block;
+        background: #333;
+        margin: 0;
+        padding: 10px;
+        list-style: none;
+        border-bottom: 1px solid rgb(0, 0, 0);
+    }
+    
 }
