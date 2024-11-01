@@ -1,0 +1,50 @@
+.App {
+  text-align: center;
+}
+
+.item{
+  background-color: black;
+  color: white;
+  display: inline;
+  font-size: 40px;
+  padding: 1%;
+}
+
+.block-items {
+  background-color: black;
+  padding: 0.7%;
+}
+
+.block-home {
+  font-size: 30px;
+  text-align: justify;
+  margin: 3%;
+}
+
+.img-home {
+  height: 450px;
+}
+
+.block-img-home {
+  text-align: center;
+}
+
+.img-reg, .img-consult {
+  height: 150px;
+  margin: 2%;
+}
+
+.btn-reg-cons {
+  background-color: black;
+  color: white;
+  font-size: 25px;
+  padding: 0.7%;
+  border-radius: 15px;
+}
+
+.btn-barra {
+  background-color: black;
+  color: white;
+  font-size: 40px;
+  border: none;
+}

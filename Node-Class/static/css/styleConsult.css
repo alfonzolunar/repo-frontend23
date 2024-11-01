@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+div {
+    text-align: center;
+    border: 2px solid black;
+    width: 250px;
+    position: absolute;
+    left: 42%;
+    top: 15%;
+    background-color: antiquewhite;
+}
+
+body {
+    background-image: url("photo_2.jpg");
+    background-size: cover;
+}
+
+button {
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 2px solid blue;
+    margin: 1%;
+}
