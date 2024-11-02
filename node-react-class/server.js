@@ -6,6 +6,7 @@ let app = ex()
 let path_frontend = path.resolve() + "/frontend/build/index.html"
 
 app.use(ex.static("frontend/build"))
+app.use(express.urlencoded())
 
 
 let port = 8000
